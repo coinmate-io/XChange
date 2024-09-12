@@ -9,7 +9,7 @@
 
   <groupId>org.knowm.xchange</groupId>
   <artifactId>xchange-parent</artifactId>
-  <version>5.1.1</version>
+  <version>5.1.1.CM.001</version>
   <packaging>pom</packaging>
 
   <name>XChange</name>
@@ -69,25 +69,30 @@
     <url>https://github.com/knowm/XChange/issues</url>
   </issueManagement>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+
+  <repositories>
     <repository>
-      <id>sonatype-nexus-staging</id>
-      <name>Nexus Release Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+      <id>gitlab-maven</id>
+      <url>https://gitlab.com/api/v4/projects/41970376/packages/maven</url>
     </repository>
-    <downloadUrl>https://oss.sonatype.org/content/groups/public/org/knowm/xchange</downloadUrl>
+  </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>gitlab-maven</id>
+      <url>https://gitlab.com/api/v4/projects/41970376/packages/maven</url>
+    </repository>
+    <snapshotRepository>
+      <id>gitlab-maven</id>
+      <url>https://gitlab.com/api/v4/projects/41970376/packages/maven</url>
+    </snapshotRepository>
   </distributionManagement>
 
   <scm>
-    <connection>scm:git:git@github.com:knowm/XChange.git</connection>
-    <developerConnection>scm:git:git@github.com:knowm/XChange.git</developerConnection>
-    <url>git@github.com:knowm/XChange.git</url>
-    <tag>xchange-5.1.1</tag>
+    <connection>scm:git:git@github.com:coinmate-io/XChange.git</connection>
+    <developerConnection>scm:git:git@github.com:coinmate-io/XChange.git</developerConnection>
+    <url>git@github.com:coinmate-io/XChange.git</url>
+    <tag>xchange-5.1.1.CM.001</tag>
   </scm>
 
   <modules>
@@ -215,21 +220,8 @@
   </modules>
 
   <ciManagement>
-    <url>https://travis-ci.org/github/knowm/XChange</url>
+    <url>https://travis-ci.org/github/coinmate-io/XChange</url>
   </ciManagement>
-
-  <repositories>
-    <repository>
-      <id>sonatype-oss-public</id>
-      <url>https://oss.sonatype.org/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 
   <dependencyManagement>
     <dependencies>
